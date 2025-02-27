@@ -1,0 +1,20 @@
+# Ignore build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.exe
+*.log
+*.zip
+*.tar.gz
+*.pyd
+
+# Ignore game save data
+/resources/profiles/save_data.txt
+
+# Ignore Virtual Environments (if used)
+venv/
+env/
+
+# Ignore Pygame cache (if any)
+*.db
+*.log
