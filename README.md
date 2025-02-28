@@ -36,5 +36,7 @@ Run the Game
 This project is released under the MIT License, meaning you're free to use, modify, and distribute the code!
 
 📢 Connect With Me
-🐱 GitHub: https://github.com/LogixKitten
-🎮 Itch.io: https://thelogixkitten.itch.io/
+
+   🐱 GitHub: https://github.com/LogixKitten
+
+   🎮 Itch.io: https://thelogixkitten.itch.io/
