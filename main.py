@@ -23,6 +23,10 @@ class Game:
         self.screen = pg.display.set_mode(RES, flags, 16)
         self.fake_screen = pg.Surface((WIDTH, HEIGHT))
         pg.display.set_caption("ManicMuncher!")
+        # Load and set the game icon
+        icon_path = resource_path("resources/icon.ico")
+        icon = pg.image.load(icon_path)
+        pg.display.set_icon(icon)
         self.clock = pg.time.Clock()
         self.global_event = pg.USEREVENT + 0
         pg.time.set_timer(self.global_event, 40)
