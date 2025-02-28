@@ -4,6 +4,7 @@ Coded By: Alice Allen
 
 import sys
 import os
+from utils import resource_path
 import pygame as pg
 from pygame.locals import *
 from map import *
@@ -14,7 +15,6 @@ from object_handler import *
 from sound import *
 from astar_pathfinding import *
 import json
-
 
 class Game:
     def __init__(self):
@@ -219,19 +219,19 @@ class Game:
     def draw_text(self, type, text, size, color, x, y):
         """Draws text with the appropriate font based on the theme."""
         if self.theme == "Nostalgia":
-            font = pg.font.Font('resources/fonts/8bitOperatorPlusSC-Regular.ttf', size)
+            font = pg.font.Font(resource_path('resources/fonts/8bitOperatorPlusSC-Regular.ttf'), size)
         elif self.theme == "Fallen_Down":
             if type == 'title1':
-                font = pg.font.Font('resources/fonts/MonsterFriend2Back.otf', size)
+                font = pg.font.Font(resource_path('resources/fonts/MonsterFriend2Back.otf'), size)
             elif type == 'title2':
-                font = pg.font.Font('resources/fonts/MonsterFriend2Center.otf', size)
+                font = pg.font.Font(resource_path('resources/fonts/MonsterFriend2Center.otf'), size)
             elif type == 'title3':
-                font = pg.font.Font('resources/fonts/MonsterFriend2Fore.otf', size)
+                font = pg.font.Font(resource_path('resources/fonts/MonsterFriend2Fore.otf'), size)
             elif type == 'normal':
-                font = pg.font.Font('resources/fonts/DTM-Sans.otf', size)
+                font = pg.font.Font(resource_path('resources/fonts/DTM-Sans.otf'), size)
             else:
                 # Default font if no specific type is given
-                font = pg.font.Font('resources/fonts/DTM-Sans.otf', size)
+                font = pg.font.Font(resource_path('resources/fonts/DTM-Sans.otf'), size)
         else:
             # Fallback font if something goes wrong
             font = pg.font.Font(None, size)

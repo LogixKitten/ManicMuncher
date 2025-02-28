@@ -1,5 +1,6 @@
 import pygame as pg
 from npc import *
+from utils import resource_path
 
 
 class ObjectHandler:
@@ -9,9 +10,9 @@ class ObjectHandler:
         self.sprite_point_list = []
         self.sprite_powerup_list = []
         self.npc_list = []
-        self.npc_sprite_path = 'resources/sprites/npc/'
-        self.static_sprite_path = 'resources/sprites/static_sprites/'
-        self.anim_sprite_path = 'resources/sprites/animated_sprites/'
+        self.npc_sprite_path = resource_path('resources/sprites/npc/')
+        self.static_sprite_path = resource_path('resources/sprites/static_sprites/')
+        self.anim_sprite_path = resource_path('resources/sprites/animated_sprites/')
         self.npc_positions = {}
         self.point_positions = [[1.5, 1.5], [2, 1.5], [2.5, 1.5], [3, 1.5], [3.5, 1.5], [4, 1.5], [4.5, 1.5], [5, 1.5],
                                  [5.5, 1.5], [6, 1.5], [6.5, 1.5], [7, 1.5], [7.5, 1.5], [8, 1.5], [8.5, 1.5],
@@ -73,15 +74,15 @@ class ObjectHandler:
 
         # spawn npc
         if self.game.theme == "Nostalgia":
-            self.add_npc(Enemy1NPC(self.game, path = 'resources/textures/Nostalgia/Enemies/enemy1/0.png', pos=(9.5, 8.5)))
-            self.add_npc(Enemy2NPC(self.game, path = 'resources/textures/Nostalgia/Enemies/enemy2/0.png', pos=(8.5, 10.5)))
-            self.add_npc(Enemy3NPC(self.game, path = 'resources/textures/Nostalgia/Enemies/enemy3/0.png', pos=(9.5, 10.5)))
-            self.add_npc(Enemy4NPC(self.game, path = 'resources/textures/Nostalgia/Enemies/enemy4/0.png', pos=(10.5, 10.5)))
+            self.add_npc(Enemy1NPC(self.game, path = resource_path('resources/textures/Nostalgia/Enemies/enemy1/0.png'), pos=(9.5, 8.5)))
+            self.add_npc(Enemy2NPC(self.game, path = resource_path('resources/textures/Nostalgia/Enemies/enemy2/0.png'), pos=(8.5, 10.5)))
+            self.add_npc(Enemy3NPC(self.game, path = resource_path('resources/textures/Nostalgia/Enemies/enemy3/0.png'), pos=(9.5, 10.5)))
+            self.add_npc(Enemy4NPC(self.game, path = resource_path('resources/textures/Nostalgia/Enemies/enemy4/0.png'), pos=(10.5, 10.5)))
         elif self.game.theme == "Fallen_Down":
-            self.add_npc(Enemy1NPC(self.game, path = 'resources/textures/Fallen_Down/Enemies/enemy1/0.png', pos=(9.5, 8.5)))
-            self.add_npc(Enemy2NPC(self.game, path = 'resources/textures/Fallen_Down/Enemies/enemy2/0.png', pos=(8.5, 10.5)))
-            self.add_npc(Enemy3NPC(self.game, path = 'resources/textures/Fallen_Down/Enemies/enemy3/0.png', pos=(9.5, 10.5)))
-            self.add_npc(Enemy4NPC(self.game, path = 'resources/textures/Fallen_Down/Enemies/enemy4/0.png', pos=(10.5, 10.5)))
+            self.add_npc(Enemy1NPC(self.game, path = resource_path('resources/textures/Fallen_Down/Enemies/enemy1/0.png'), pos=(9.5, 8.5)))
+            self.add_npc(Enemy2NPC(self.game, path = resource_path('resources/textures/Fallen_Down/Enemies/enemy2/0.png'), pos=(8.5, 10.5)))
+            self.add_npc(Enemy3NPC(self.game, path = resource_path('resources/textures/Fallen_Down/Enemies/enemy3/0.png'), pos=(9.5, 10.5)))
+            self.add_npc(Enemy4NPC(self.game, path = resource_path('resources/textures/Fallen_Down/Enemies/enemy4/0.png'), pos=(10.5, 10.5)))
 
     def get_remaining_points(self):
         return len(self.sprite_point_list)
@@ -101,39 +102,39 @@ class ObjectHandler:
         y_coor = self.bonus_spawn_pos[1]
         if self.game.theme == "Nostalgia":
             if self.game.player.current_level == 1:
-                self.add_bonus(Bonus1Sprite(game, path = 'resources/textures/Nostalgia/BonusItems/1.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus1Sprite(game, path = resource_path('resources/textures/Nostalgia/BonusItems/1.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 2:
-                self.add_bonus(Bonus2Sprite(game, path = 'resources/textures/Nostalgia/BonusItems/2.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus2Sprite(game, path = resource_path('resources/textures/Nostalgia/BonusItems/2.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 3 or self.game.player.current_level == 4:
-                self.add_bonus(Bonus3Sprite(game, path = 'resources/textures/Nostalgia/BonusItems/3.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus3Sprite(game, path = resource_path('resources/textures/Nostalgia/BonusItems/3.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 5 or self.game.player.current_level == 6:
-                self.add_bonus(Bonus4Sprite(game, path = 'resources/textures/Nostalgia/BonusItems/4.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus4Sprite(game, path = resource_path('resources/textures/Nostalgia/BonusItems/4.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 7 or self.game.player.current_level == 8:
-                self.add_bonus(Bonus5Sprite(game, path = 'resources/textures/Nostalgia/BonusItems/5.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus5Sprite(game, path = resource_path('resources/textures/Nostalgia/BonusItems/5.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 9 or self.game.player.current_level == 10:
-                self.add_bonus(Bonus6Sprite(game, path = 'resources/textures/Nostalgia/BonusItems/6.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus6Sprite(game, path = resource_path('resources/textures/Nostalgia/BonusItems/6.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 11 or self.game.player.current_level == 12:
-                self.add_bonus(Bonus7Sprite(game, path = 'resources/textures/Nostalgia/BonusItems/7.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus7Sprite(game, path = resource_path('resources/textures/Nostalgia/BonusItems/7.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level >= 13:
-                self.add_bonus(Bonus8Sprite(game, path = 'resources/textures/Nostalgia/BonusItems/8.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus8Sprite(game, path = resource_path('resources/textures/Nostalgia/BonusItems/8.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             self.game.sound.credit.play(3)
         elif self.game.theme == "Fallen_Down":
             if self.game.player.current_level == 1:
-                self.add_bonus(Bonus1Sprite(game, path = 'resources/textures/Fallen_Down/BonusItems/1.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus1Sprite(game, path = resource_path('resources/textures/Fallen_Down/BonusItems/1.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 2:
-                self.add_bonus(Bonus2Sprite(game, path = 'resources/textures/Fallen_Down/BonusItems/2.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus2Sprite(game, path = resource_path('resources/textures/Fallen_Down/BonusItems/2.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 3 or self.game.player.current_level == 4:
-                self.add_bonus(Bonus3Sprite(game, path = 'resources/textures/Fallen_Down/BonusItems/3.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus3Sprite(game, path = resource_path('resources/textures/Fallen_Down/BonusItems/3.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 5 or self.game.player.current_level == 6:
-                self.add_bonus(Bonus4Sprite(game, path = 'resources/textures/Fallen_Down/BonusItems/4.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus4Sprite(game, path = resource_path('resources/textures/Fallen_Down/BonusItems/4.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 7 or self.game.player.current_level == 8:
-                self.add_bonus(Bonus5Sprite(game, path = 'resources/textures/Fallen_Down/BonusItems/5.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus5Sprite(game, path = resource_path('resources/textures/Fallen_Down/BonusItems/5.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 9 or self.game.player.current_level == 10:
-                self.add_bonus(Bonus6Sprite(game, path = 'resources/textures/Fallen_Down/BonusItems/6.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus6Sprite(game, path = resource_path('resources/textures/Fallen_Down/BonusItems/6.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level == 11 or self.game.player.current_level == 12:
-                self.add_bonus(Bonus7Sprite(game, path = 'resources/textures/Fallen_Down/BonusItems/7.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus7Sprite(game, path = resource_path('resources/textures/Fallen_Down/BonusItems/7.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             elif self.game.player.current_level >= 13:
-                self.add_bonus(Bonus8Sprite(game, path = 'resources/textures/Fallen_Down/BonusItems/8.png', pos=(x_coor, y_coor), scale=0.5, shift=0.75))
+                self.add_bonus(Bonus8Sprite(game, path = resource_path('resources/textures/Fallen_Down/BonusItems/8.png'), pos=(x_coor, y_coor), scale=0.5, shift=0.75))
             self.game.sound.credit.play(3)
 
     def respawn_enemies(self):
@@ -158,18 +159,18 @@ class ObjectHandler:
             x_coor = i[0]
             y_coor = i[1]
             if self.game.theme == "Nostalgia":
-                self.add_point(PointSprite(game, path = 'resources/textures/Nostalgia/Points/pellet.png', pos=(x_coor, y_coor), scale=0.3, shift=0.75))            
+                self.add_point(PointSprite(game, path = resource_path('resources/textures/Nostalgia/Points/pellet.png'), pos=(x_coor, y_coor), scale=0.3, shift=0.75))            
             elif self.game.theme == "Fallen_Down":
-                self.add_point(PointSprite(game, path = 'resources/textures/Fallen_Down/Points/candy.png', pos=(x_coor, y_coor), scale=0.3, shift=0.75))
+                self.add_point(PointSprite(game, path = resource_path('resources/textures/Fallen_Down/Points/candy.png'), pos=(x_coor, y_coor), scale=0.3, shift=0.75))
 
     def spawn_powerups(self, game):
         for i in self.powerups_pos:
             x_coor = i[0]
             y_coor = i[1]
             if self.game.theme == "Nostalgia":
-                self.add_powerups(PowerupSprite(game, path = 'resources/textures/Nostalgia/Powerup/powerup.png', pos=(x_coor, y_coor), scale=0.69, shift=0.1))
+                self.add_powerups(PowerupSprite(game, path = resource_path('resources/textures/Nostalgia/Powerup/powerup.png'), pos=(x_coor, y_coor), scale=0.69, shift=0.1))
             if self.game.theme == "Fallen_Down":
-                self.add_powerups(PowerupSprite(game, path = 'resources/textures/Fallen_Down/Powerup/powerup.png', pos=(x_coor, y_coor), scale=0.69, shift=0.1))
+                self.add_powerups(PowerupSprite(game, path = resource_path('resources/textures/Fallen_Down/Powerup/powerup.png'), pos=(x_coor, y_coor), scale=0.69, shift=0.1))
 
     def update(self):
         self.npc_positions = {npc.map_pos for npc in self.npc_list if npc.alive}

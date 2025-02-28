@@ -1,11 +1,12 @@
 import pygame as pg
+from utils import resource_path
 from settings import *
 import os
 from collections import deque
 
 
 class SpriteObject:
-    def __init__(self, game, path='resources/textures/Nostalgia/Points/pellet.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/Points/pellet.png'),
                  pos=(10.5, 3.5), scale=0.7, shift=0.27):
         self.game = game
         self.player = game.player
@@ -187,77 +188,77 @@ class SpriteObject:
 
 
 class PointSprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/Points/pellet.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/Points/pellet.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "pellet"
 
 
 class PowerupSprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/Powerup/powerup.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/Powerup/powerup.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "powerup"
 
 
 class Bonus1Sprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/BonusItems/1.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/BonusItems/1.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "bonus1"
 
 
 class Bonus2Sprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/BonusItems/2.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/BonusItems/2.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "bonus2"
 
 
 class Bonus3Sprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/BonusItems/3.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/BonusItems/3.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "bonus3"
 
 
 class Bonus4Sprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/BonusItems/4.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/BonusItems/4.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "bonus4"
 
 
 class Bonus5Sprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/BonusItems/5.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/BonusItems/5.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "bonus5"
 
 
 class Bonus6Sprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/BonusItems/6.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/BonusItems/6.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "bonus6"
 
 
 class Bonus7Sprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/BonusItems/7.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/BonusItems/7.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "bonus7"
 
 
 class Bonus8Sprite(SpriteObject):
-    def __init__(self, game, path='resources/textures/Nostalgia/BonusItems/8.png',
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/BonusItems/8.png'),
                  pos=(10.5, 6.5), scale=0.7, shift=0.27):
         super().__init__(game, path, pos, scale, shift)
         self.name = "bonus8"
 
 
 class AnimatedSprite(SpriteObject):
-    def __init__(self, game, path='resources/sprites/animated_sprites/placeholder/0.png',
+    def __init__(self, game, path=resource_path('resources/sprites/animated_sprites/placeholder/0.png'),
                  pos=(11.5, 3.5), scale=0.8, shift=0.16, animation_time=120):
         super().__init__(game, path, pos, scale, shift)
         self.animation_time = animation_time

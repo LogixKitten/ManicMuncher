@@ -2,6 +2,7 @@ import random
 
 from settings import *
 import pygame as pg
+from utils import resource_path
 import math
 from pyvidplayer import Video
 import json
@@ -16,7 +17,7 @@ class Player:
         self.current_life_array = [1, 0, 0, 0, 0, 0, 0]
         self.rel = 0
         self.time_prev = pg.time.get_ticks()
-        self.font = pg.font.Font('resources/fonts/8bitOperatorPlusSC-Regular.ttf', 40)
+        self.font = pg.font.Font(resource_path('resources/fonts/8bitOperatorPlusSC-Regular.ttf'), 40)
         self.score = 0
         self.highscore = self.get_highscore()
         self.is_super = False
@@ -37,9 +38,8 @@ class Player:
         self.eaten_speed = 0.035
         self.cons_enemy = 0
         self.bool_switch = 1
-        self.scatter = True
-        self.path = 'resources/sound/'
-        self.munch = pg.mixer.Sound(self.path + 'munch.wav')
+        self.scatter = True        
+        self.munch = pg.mixer.Sound(resource_path('resources/sound/munch.wav'))
         self.enemy1_distance = 0
         self.enemy2_distance = 0
         self.enemy3_distance = 0

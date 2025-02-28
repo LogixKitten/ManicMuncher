@@ -1,6 +1,6 @@
 import pygame as pg
 from settings import *
-
+from utils import resource_path
 
 class ObjectRenderer:
     def __init__(self, game):
@@ -12,30 +12,30 @@ class ObjectRenderer:
         self.ui_scale = []
 
         if self.game.theme == "Nostalgia":
-            self.sky_image = self.get_texture('resources/textures/Nostalgia/Sky/sky.png', (WIDTH, HALF_HEIGHT))
+            self.sky_image = self.get_texture(resource_path('resources/textures/Nostalgia/Sky/sky.png'), (WIDTH, HALF_HEIGHT))
 
-            self.game_over_image = self.get_texture('resources/textures/Nostalgia/Screens/game_over.png', RES)
+            self.game_over_image = self.get_texture(resource_path('resources/textures/Nostalgia/Screens/game_over.png'), RES)
 
-            self.life_icons = [self.get_texture(f'resources/textures/Nostalgia/Lives/{i}.png', [self.icon_size * 1.5] * 2) for i in range(2)]
+            self.life_icons = [self.get_texture(resource_path(f'resources/textures/Nostalgia/Lives/{i}.png'), [self.icon_size * 1.5] * 2) for i in range(2)]
             self.life_images = dict(zip(map(str, range(2)), self.life_icons))
 
-            self.level_icons = [self.get_texture(f'resources/textures/Nostalgia/BonusItems/{i}.png', [self.icon_size * 1.5] * 2) for i in range(9)]
+            self.level_icons = [self.get_texture(resource_path(f'resources/textures/Nostalgia/BonusItems/{i}.png'), [self.icon_size * 1.5] * 2) for i in range(9)]
             self.level_images = dict(zip(map(str, range(9)), self.level_icons))
 
-            self.powerup_image = self.get_texture('resources/textures/Nostalgia/Powerup/powerup.png', (64, 64))
+            self.powerup_image = self.get_texture(resource_path('resources/textures/Nostalgia/Powerup/powerup.png'), (64, 64))
 
         elif self.game.theme == "Fallen_Down":
-            self.sky_image = self.get_texture('resources/textures/Fallen_Down/Sky/sky.png', (WIDTH, HALF_HEIGHT))
+            self.sky_image = self.get_texture(resource_path('resources/textures/Fallen_Down/Sky/sky.png'), (WIDTH, HALF_HEIGHT))
 
-            self.game_over_image = self.get_texture('resources/textures/Fallen_Down/Screens/game_over.png', RES)
+            self.game_over_image = self.get_texture(resource_path('resources/textures/Fallen_Down/Screens/game_over.png'), RES)
 
-            self.life_icons = [self.get_texture(f'resources/textures/Fallen_Down/Lives/{i}.png', [self.icon_size * 1.5] * 2) for i in range(8)]
+            self.life_icons = [self.get_texture(resource_path(f'resources/textures/Fallen_Down/Lives/{i}.png'), [self.icon_size * 1.5] * 2) for i in range(8)]
             self.life_images = dict(zip(map(str, range(8)), self.life_icons))
 
-            self.level_icons = [self.get_texture(f'resources/textures/Fallen_Down/BonusItems/{i}.png', [self.icon_size * 1.5] * 2) for i in range(9)]
+            self.level_icons = [self.get_texture(resource_path(f'resources/textures/Fallen_Down/BonusItems/{i}.png'), [self.icon_size * 1.5] * 2) for i in range(9)]
             self.level_images = dict(zip(map(str, range(9)), self.level_icons))
 
-            self.powerup_image = self.get_texture('resources/textures/Fallen_Down/Powerup/powerup.png', (128, 128))
+            self.powerup_image = self.get_texture(resource_path('resources/textures/Fallen_Down/Powerup/powerup.png'), (128, 128))
 
 
 
@@ -115,18 +115,18 @@ class ObjectRenderer:
         if self.game.theme == "Nostalgia":
             return {
             
-                99: self.get_texture('resources/textures/Nostalgia/Walls/wall1.png'),
-                98: self.get_texture('resources/textures/Nostalgia/Walls/EnemyEnclosure.png'),
-                97: self.get_texture('resources/textures/Nostalgia/Walls/portal.png'),
-                96: self.get_texture('resources/textures/Nostalgia/Walls/wall2.png'),
-                95: self.get_texture('resources/textures/Nostalgia/Walls/wall3.png'),
+                99: self.get_texture(resource_path('resources/textures/Nostalgia/Walls/wall1.png')),
+                98: self.get_texture(resource_path('resources/textures/Nostalgia/Walls/EnemyEnclosure.png')),
+                97: self.get_texture(resource_path('resources/textures/Nostalgia/Walls/portal.png')),
+                96: self.get_texture(resource_path('resources/textures/Nostalgia/Walls/wall2.png')),
+                95: self.get_texture(resource_path('resources/textures/Nostalgia/Walls/wall3.png'))
             }
         elif self.game.theme == "Fallen_Down":
             return {
             
-                99: self.get_texture('resources/textures/Fallen_Down/Walls/wall1.png'),
-                98: self.get_texture('resources/textures/Fallen_Down/Walls/EnemyEnclosure.png'),
-                97: self.get_texture('resources/textures/Fallen_Down/Walls/portal.png'),
-                96: self.get_texture('resources/textures/Fallen_Down/Walls/wall2.png'),
-                95: self.get_texture('resources/textures/Fallen_Down/Walls/wall3.png'),
+                99: self.get_texture(resource_path('resources/textures/Fallen_Down/Walls/wall1.png')),
+                98: self.get_texture(resource_path('resources/textures/Fallen_Down/Walls/EnemyEnclosure.png')),
+                97: self.get_texture(resource_path('resources/textures/Fallen_Down/Walls/portal.png')),
+                96: self.get_texture(resource_path('resources/textures/Fallen_Down/Walls/wall2.png')),
+                95: self.get_texture(resource_path('resources/textures/Fallen_Down/Walls/wall3.png'))
             }

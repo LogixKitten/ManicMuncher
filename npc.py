@@ -1,14 +1,15 @@
 import time
+from utils import resource_path
 
 from sprite_object import *
 
 
 class NPC(AnimatedSprite):
-    def __init__(self, game, path='resources/textures/Nostalgia/Enemies/enemy1/0.png', pos=(10, 6),
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/Enemies/enemy1/0.png'), pos=(10, 6),
                  scale=0.6, shift=0.38, animation_time=180):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.eaten_images = self.get_images(self.path + '/eaten')
-        self.scared_images = self.get_images(self.path + '/scared')      
+        self.scared_images = self.get_images(self.path + '/scared')
         self.walk_images = self.get_images(self.path + '/walk')
 
         self.name = "enemy1"
@@ -542,21 +543,21 @@ class Enemy1NPC(NPC):
 
 
 class Enemy2NPC(NPC):
-    def __init__(self, game, path='resources/textures/Nostalgia/Enemies/enemy2/0.png', pos=(10.5, 6.5),
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/Enemies/enemy2/0.png'), pos=(10.5, 6.5),
                  scale=0.7, shift=0.27, animation_time=180):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.name = "enemy2"
 
 
 class Enemy3NPC(NPC):
-    def __init__(self, game, path='resources/textures/Nostalgia/Enemies/enemy3/0.png', pos=(10.5, 6.5),
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/Enemies/enemy3/0.png'), pos=(10.5, 6.5),
                  scale=0.7, shift=0.27, animation_time=180):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.name = "enemy3"
 
 
 class Enemy4NPC(NPC):
-    def __init__(self, game, path='resources/textures/Nostalgia/Enemies/enemy4/0.png', pos=(10.5, 6.5),
+    def __init__(self, game, path=resource_path('resources/textures/Nostalgia/Enemies/enemy4/0.png'), pos=(10.5, 6.5),
                  scale=0.7, shift=0.27, animation_time=180):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.name = "enemy4"
