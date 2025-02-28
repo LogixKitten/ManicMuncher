@@ -17,15 +17,16 @@ ManicMuncher is a Pac-Man-inspired game I originally created for my Intro to Pyt
 📦 How to Play
 
 1️⃣ Play the Standalone Version (Windows)
-    You can download the ready-to-play .exe file from Itch.io.
-    Simply extract the ZIP and run ManicMuncher.exe – no setup required!
+
+You can download the ready-to-play .exe file from Itch.io.
+Simply extract the ZIP and run ManicMuncher.exe – no setup required!
 
 2️⃣ Running From Source (For Developers)
 
 If you'd like to run the game from source, follow these steps:
 
 Install Dependencies
-    Make sure you have Python 3.12+ installed. Then, install the required dependencies:
+Make sure you have Python 3.12+ installed. Then, install the required dependencies:
 
     pip install -r requirements.txt
 
