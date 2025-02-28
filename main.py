@@ -3,6 +3,7 @@ Coded By: Alice Allen
 """
 
 import sys
+import os
 import pygame as pg
 from pygame.locals import *
 from map import *
@@ -42,12 +43,27 @@ class Game:
             "fallen_down": False,
         }
 
+        # Ensure the directory exists
+        save_dir = "resources/profiles/"
+        save_file_path = os.path.join(save_dir, "save_data.txt")
+
+        # Create the directory if it doesn't exist
+        os.makedirs(save_dir, exist_ok=True)
+
         # Load Save Data
         try:
-            with open("resources/profiles/save_data.txt") as save_file:
+            with open(save_file_path, "r") as save_file:
                 self.save_data = json.load(save_file)
-        except:
-            with open("resources/profiles/save_data.txt", "w") as save_file:
+        except (FileNotFoundError, json.JSONDecodeError):
+            # If the file doesn't exist or is corrupted, create a new one
+            self.save_data = {
+                "gold": 0,
+                "highscore": 0,
+                "current_theme": "Nostalgia",
+                "nostalgia": True,
+                "fallen_down": False,
+            }
+            with open(save_file_path, "w") as save_file:
                 json.dump(self.save_data, save_file)
 
         self.theme = self.save_data["current_theme"]
