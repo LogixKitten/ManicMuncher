@@ -4,7 +4,7 @@ A Python-powered retro arcade game with A* Pathfinding!
 
 🎓 About This Project
 
-ManicMuncher is a Pac-Man-inspired game I originally created for my Intro to Python course at Texas A&M University. The main goal of this project was to implement and demonstrate the A\* Pathfinding Algorithm, which controls how the ghosts navigate the maze and hunt down the player in a smart and efficient way. While this started as a simple academic project, it became a bit of a passion project, so I added theme customization, a game store, and overall improvements to make it a more complete game. Now, I'm sharing it as an open-source project and releasing a standalone version on Itch.io for others to enjoy!
+ManicMuncher is a Pac-Man-inspired game I originally created for my Intro to Python course. The main goal of this project was to implement and demonstrate the A\* Pathfinding Algorithm, which controls how the ghosts navigate the maze and hunt down the player in a smart and efficient way. While this started as a simple academic project, it became a bit of a passion project, so I added theme customization, a game store, and overall improvements to make it a more complete game. Now, I'm sharing it as an open-source project and releasing a standalone version on Itch.io for others to enjoy!
 
 🎮 Features
 
